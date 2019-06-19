@@ -16,7 +16,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 mongoose.connect('mongodb://angulardyma:123@ds119685.mlab.com:19685/angulardyma', {
     keepAlive: true,
-    reconnectTries: Number.MAX_VALUE
+    reconnectTries: Number.MAX_VALUE,
+	  useNewUrlParser: true
   }, function (error) {
     if (error) {
       console.log(error);
