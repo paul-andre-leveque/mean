@@ -17,7 +17,7 @@ mongoose.connect(
   "mongodb+srv://angulardyma:123123123@cluster0-urpjt.gcp.mongodb.net/angulardyma?retryWrites=true&w=majority",
   {
     keepAlive: true,
-    reconnectTries: Number.MAX_VALUE,
+    useUnifiedTopology: true,
     useNewUrlParser: true
   },
   function(error) {
