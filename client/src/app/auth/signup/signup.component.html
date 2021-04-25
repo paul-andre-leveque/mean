@@ -1,0 +1,42 @@
+<div class="py-5" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-title>Inscription</mat-card-title>
+    <mat-card-content>
+      <form
+        [formGroup]="signupForm"
+        fxLayout="column"
+        fxLayoutGap="15px"
+        fxLayoutAlign="center center"
+      >
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            formControlName="username"
+            placeholder="nom"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="email"
+            formControlName="email"
+            placeholder="email"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="password"
+            formControlName="password"
+            placeholder="mot de passe"
+          />
+        </mat-form-field>
+        <div *ngIf="error">{{ error }}</div>
+        <button mat-raised-button color="primary" (click)="trySignup()">
+          Inscription
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

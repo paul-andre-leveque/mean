@@ -1,0 +1,98 @@
+<!-- <div class="my-5 py-5" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-title>Panel Admin</mat-card-title>
+    <mat-card-content
+      *ngIf="currentUser | async; let user"
+      fxLayout="column"
+      fxLayoutGap="15px"
+    >
+      <div>email : {{ user.email }}</div>
+      <div>name : {{ user.username }}</div>
+    </mat-card-content>
+  </mat-card>
+</div> -->
+
+<div class="col-sm-6 offset-sm-3 mt-2">
+  <form [formGroup]="articleWikiForm">
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input
+        type="text"
+        placeholder="Que vendez-vous ?"
+        id="title"
+        formControlName="title"
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="resume">Résumé</label>
+      <textarea
+        type="text"
+        name="resume"
+        id="resume"
+        cols="30"
+        rows="7"
+        class="form-control"
+        formControlName="resume"
+        placeholder="resume de l'article"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="synopsie">Synopsie</label>
+      <textarea
+        type="text"
+        name="synopsie"
+        id="synopsie"
+        cols="30"
+        rows="7"
+        class="form-control"
+        formControlName="synopsie"
+        placeholder="synopsie"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="developpement">Développement</label>
+      <textarea
+        type="text"
+        name="developpementn"
+        id="developpement"
+        cols="30"
+        rows="7"
+        class="form-control"
+        formControlName="developpement"
+        placeholder="developpement"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="accueil">Accueil</label>
+      <textarea
+        type="text"
+        name="accueil"
+        id="accueil"
+        cols="30"
+        rows="7"
+        class="form-control"
+        formControlName="accueil"
+        placeholder="accueil"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">URL de l'image</label>
+      <input
+        type="text"
+        placeholder="http://..."
+        id="imageUrl"
+        formControlName="imageUrl"
+        class="form-control"
+      />
+    </div>
+    <button
+      class="btn btn-primary"
+      (click)="onSubmit()"
+      [disabled]="articleWikiForm.invalid"
+    >
+      Valider
+    </button>
+    <p class="alert-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+</div>
