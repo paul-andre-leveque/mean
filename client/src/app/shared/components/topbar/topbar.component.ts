@@ -6,13 +6,13 @@ import { Subscription } from "rxjs";
 @Component({
   selector: "app-topbar",
   templateUrl: "./topbar.component.html",
-  styleUrls: ["./topbar.component.css"],
+  styleUrls: ["./topbar.component.scss"],
 })
 export class TopbarComponent implements OnInit {
   public jwtToken: JwtToken;
   public subscription: Subscription;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.authService.jwtToken.subscribe((jwtToken: JwtToken) => {

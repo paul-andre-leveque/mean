@@ -1,0 +1,253 @@
+<!-- <div class="my-5 py-5" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-title>Panel Admin</mat-card-title>
+    <mat-card-content
+      *ngIf="currentUser | async; let user"
+      fxLayout="column"
+      fxLayoutGap="15px"
+    >
+      <div>email : {{ user.email }}</div>
+      <div>name : {{ user.username }}</div>
+    </mat-card-content>
+  </mat-card>
+</div> -->
+
+<div class="container">
+  <div class="form-wrap">
+    <header>
+      <h2>L'article</h2>
+    </header>
+    <div class="">
+      <form [formGroup]="articleWikiForm">
+        <div class="form-group">
+          <label for="title">Titre</label>
+          <input
+            type="text"
+            name="title"
+            placeholder="Titre"
+            id="title"
+            formControlName="title"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="resume">Résumé</label>
+          <textarea
+            type="text"
+            name="resume"
+            id="resume"
+            cols="70"
+            rows="7"
+            class="form-control"
+            formControlName="resume"
+            placeholder="resume de l'article"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="synopsie">Synopsie</label>
+          <textarea
+            type="text"
+            name="synopsie"
+            id="synopsie"
+            cols="70"
+            rows="7"
+            class="form-control"
+            formControlName="synopsie"
+            placeholder="synopsie"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="accueil">Système de jeu</label>
+          <textarea
+            type="text"
+            name="gameplay"
+            id="gameplay"
+            cols="70"
+            rows="7"
+            class="form-control"
+            formControlName="gameplay"
+            placeholder="Système de jeu"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="developpement">Développement</label>
+          <textarea
+            type="text"
+            name="developpement"
+            id="developpement"
+            cols="70"
+            rows="7"
+            class="form-control"
+            formControlName="developpement"
+            placeholder="developpement"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="accueil">Accueil</label>
+          <textarea
+            type="text"
+            name="accueil"
+            id="accueil"
+            cols="70"
+            rows="6"
+            class="form-control"
+            formControlName="accueil"
+            placeholder="accueil"
+          ></textarea>
+        </div>
+        <button
+          class="btn btn-primary"
+          (click)="wikiPost()"
+          [disabled]="articleWikiForm.invalid"
+        >
+          Valider
+        </button>
+        <p class="alert-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+      </form>
+    </div>
+  </div>
+  <div class="container2">
+    <div class="form-wrap2">
+      <header>
+        <h2>Détails</h2>
+      </header>
+      <div class="">
+        <form [formGroup]="articleWikiForm">
+          <div class="form-group">
+            <label for="dev">Développeur</label>
+            <input
+              type="text"
+              name="dev"
+              placeholder="Développeur"
+              id="dev"
+              formControlName="dev"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="editeur">Editeur</label>
+            <input
+              type="text"
+              name="editeur"
+              placeholder="éditeur"
+              id="editeur"
+              formControlName="editeur"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="directeur">Directeur</label>
+            <input
+              type="text"
+              name="directeur"
+              placeholder="directeur"
+              id="directeur"
+              formControlName="directeur"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="compositeur">Compositeur</label>
+            <input
+              type="text"
+              name="compositeur"
+              placeholder="compositeur"
+              id="compositeur"
+              formControlName="compositeur"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="date">Date de sortie</label>
+            <input
+              type="text"
+              name="date"
+              placeholder="date"
+              id="date"
+              formControlName="date"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="genre">Genre</label>
+            <input
+              type="text"
+              name="genre"
+              placeholder="genre"
+              id="genre"
+              formControlName="genre"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="plateforme">Plate-Forme</label>
+            <input
+              type="text"
+              name="plateforme"
+              placeholder="plateforme"
+              id="plateforme"
+              formControlName="plateforme"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="mod">Mode de jeu</label>
+            <input
+              type="text"
+              name="mod"
+              placeholder="mode"
+              id="mod"
+              formControlName="mod"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="langue">Langue</label>
+            <input
+              type="text"
+              name="langue"
+              placeholder="langue"
+              id="langue"
+              formControlName="langue"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="imageUrl1">imageUrl1</label>
+            <input
+              name="imageUrl1"
+              type="text"
+              placeholder="http://..."
+              id="imageUrl1"
+              formControlName="imageUrl1"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="imageUrl2">imageUrl2</label>
+            <input
+              name="imageUrl2"
+              type="text"
+              placeholder="http://..."
+              id="imageUrl2"
+              formControlName="imageUrl2"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="imageUrl3">imageUrl3</label>
+            <input
+              name="imageUrl3"
+              type="text"
+              placeholder="http://..."
+              id="imageUrl3"
+              formControlName="imageUrl3"
+              class="form-control"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="form-group"></div>
+    </div>
+  </div>
+</div>

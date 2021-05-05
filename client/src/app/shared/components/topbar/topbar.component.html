@@ -1,5 +1,5 @@
-<mat-toolbar color="primary" fxLayoutGap="15px">
-  <span class="link" routerLink="/">Mon logo</span>
+<!-- <mat-toolbar fxLayoutGap="15px">
+  <span class="link" routerLink="/">WikiRetroGame</span>
   <span fxFlex="auto"></span>
   <span
     *ngIf="!jwtToken.isAuthenticated"
@@ -16,9 +16,35 @@
     fxLayoutAlign="center center"
     fxLayoutGap="20px"
   >
-    <span class="link" routerLink="/admin">Admin</span>
+    <span class="link" routerLink="/listeArticles">Liste des articles</span>
+    <span class="link" routerLink="/articlePost">Ajouter</span>
     <mat-icon class="link" routerLink="/" (click)="logout()"
       >power_settings_new</mat-icon
     >
   </span>
-</mat-toolbar>
+</mat-toolbar> -->
+
+<nav
+  class="header d-flex flex-row flex-justify-content-between p-10 flex-align-items-center"
+>
+  <ul>
+    <li class="link" class="logo p-20" routerLink="/">WikiRetroGame</li>
+  </ul>
+  <ul *ngIf="!jwtToken.isAuthenticated">
+    <li class="link" routerLink="/signin">Connexion</li>
+    <li class="link" routerLink="/signup">Inscription</li>
+    <li class="link" routerLink="/contact" routerLinkActive="active">
+      Contact
+    </li>
+  </ul>
+  <ul *ngIf="jwtToken.isAuthenticated">
+    <li class="link" routerLink="/listeArticles">Liste des articles</li>
+    <li class="link" routerLink="/articlePost">Ajouter</li>
+    <li class="link" routerLink="/contact" routerLinkActive="active">
+      Contact
+    </li>
+    <mat-icon class="link" routerLink="/" (click)="logout()"
+      >power_settings_new</mat-icon
+    >
+  </ul>
+</nav>

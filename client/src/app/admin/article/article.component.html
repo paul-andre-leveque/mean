@@ -1,0 +1,57 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<div *ngIf="!loading">
+  <button class="btn btn-link" (click)="Back()"><< Retour</button>
+  <div class="single-thing-pane">
+    <img [src]="articleWiki?.imageUrl1" alt="" />
+    <div class="single-thing-info">
+      <h1>{{ articleWiki?.title }}</h1>
+      <h2>Résumé</h2>
+      <p>{{ articleWiki?.resume }}</p>
+      <h3>Synopsie</h3>
+      <p>{{ articleWiki?.synopsie }}</p>
+      <h3>Développement</h3>
+      <p>{{ articleWiki?.developpement }}</p>
+      <h3>Accueil</h3>
+      <p>{{ articleWiki?.accueil }}</p>
+      <button
+        class="btn btn-success m-1"
+        (click)="Modify()"
+        [disabled]="part >= 3 && userId !== articleWiki?.userId"
+      >
+        Modifier
+      </button>
+      <button class="btn btn-danger m-1" (click)="Delete()">Supprimer</button>
+    </div>
+  </div>
+</div>
+
+<!-- <mat-spinner *ngIf="loading"></mat-spinner>
+<div *ngIf="!loading">
+  <button class="btn btn-link" (click)="onGoBack()"><< Retour</button>
+  <div class="single-thing-pane">
+    <img [src]="articleWiki?.imageUrl" alt="" />
+    <div class="single-thing-info">
+      <h1>{{ articleWiki?.title }}</h1>
+      <h2 class="single-thing-price">
+        {{ articleWiki?.resume }}
+      </h2>
+      <p>{{ articleWiki?.synopsie }}</p>
+      <p>{{ articleWiki?.developpement }}</p>
+      <p>{{ articleWiki?.accueil }}</p>
+      <button
+        class="btn btn-success m-1"
+        (click)="onModify()"
+        [disabled]="part >= 3 && userId !== articleWiki?.userId"
+      >
+        Modifier
+      </button>
+      <button
+        class="btn btn-danger m-1"
+        (click)="onDelete()"
+        [disabled]="part >= 3 && userId !== articleWiki?.userId"
+      >
+        Supprimer
+      </button>
+    </div>
+  </div>
+</div> -->

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
 import { JwtToken } from '../models/JwtToken.model';
 import { tap } from 'rxjs/operators';
-import { ArticleWiki } from '../models/articleWiki.model';
+
 
 @Injectable({
   providedIn: 'root',
@@ -35,10 +35,7 @@ export class AuthService {
     }
     console.log(this.jwtToken.value);
   }
-  ///// article  wiki
-  public articleWiki(articleWiki: ArticleWiki): Observable<ArticleWiki> {
-    return this.http.post<ArticleWiki>('/api/articleWiki', articleWiki);
-  }
+
   /// inscriptions
   public signup(user: User): Observable<User> {
     return this.http.post<User>('/api/auth/signup', user);

@@ -6,7 +6,7 @@ import { AuthService } from '../../shared/services/auth.service';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css'],
+  styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent implements OnInit {
   public signinForm: FormGroup;
@@ -27,7 +27,7 @@ export class SigninComponent implements OnInit {
   public trySignin() {
     this.authService.signin(this.signinForm.value).subscribe(
       () => {
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/listeArticles']);
       },
       (err) => {
         this.error = err.error;

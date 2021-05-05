@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  background: rgb(235, 233, 233);
+  justify-content: space-around;
+  margin-top: 1%;
+  border-radius: 20px;
+}
+
+.form-group {
+  display: flex;
+  margin: 0px;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.form-group input {
+  line-height: 2.4em;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 15px;
+  padding-left: 10px;
+}
+h2 {
+  color: black;
+  margin-top: 10px;
+}
+
+.btn {
+  margin: 20px;
+}

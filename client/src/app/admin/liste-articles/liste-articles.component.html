@@ -1,0 +1,81 @@
+<!--<mat-spinner *ngIf="loading"></mat-spinner>
+<p class="text-center" *ngIf="liste.length <= 0 && !loading">Aucun articles</p>
+<div class="stuff-grid" *ngIf="liste.length >= 0">
+  <div
+    class="thing-pane"
+    *ngFor="let articleWiki of liste"
+    [ngClass]="{ open: articleWiki._id === chosenId }"
+    [ngStyle]="{ 'background-image': 'url(' + articleWiki.imageUrl1 + ')' }"
+    (click)="articleClicked(articleWiki._id)"
+  >
+    <div class="thing-info">
+      <h3>
+        {{ articleWiki.title }}
+      </h3>
+    </div>
+  </div>
+</div>-->
+<div class="container">
+  <h2>Liste des articles</h2>
+  <div class="search-bar-cont">
+    <input
+      class="search-bar-admin"
+      type="text"
+      placeholder="Rechercher"
+      (keyup)="updateFilter($event.target.value)"
+    />
+  </div>
+  <table matSort class="w-100" mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Titre</th>
+      <td
+        class="pointer"
+        (click)="articleClicked(articleWiki._id)"
+        mat-cell
+        *matCellDef="let articleWiki"
+      >
+        {{ articleWiki.title }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dev">
+      <th mat-header-cell *matHeaderCellDef>Développeur</th>
+      <td mat-cell *matCellDef="let articleWiki">
+        {{ articleWiki.dev }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="editeur">
+      <th mat-header-cell *matHeaderCellDef>Editeur</th>
+      <td mat-cell *matCellDef="let articleWiki">
+        {{ articleWiki.editeur }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="genre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Genre</th>
+      <td mat-cell *matCellDef="let articleWiki">
+        {{ articleWiki.genre }}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let articleWiki; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [pageSize]="10"
+    showFirstLastButtons
+    [pageSizeOptions]="[5, 10, 20, 30]"
+  >
+  </mat-paginator>
+</div>
+
+<!-- <h2>Liste des articles</h2>
+
+  <ul class="heroes">
+    <li *ngFor="let articleWiki of liste">
+      <a routerLink="//article/{{ articleWiki._id }}">
+        <span class="badge">{{ articleWiki.title }}</span>
+      </a>
+    </li>
+  </ul> -->

@@ -1,0 +1,108 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.link {
+  outline: 0;
+  cursor: pointer;
+}
+
+// html,
+// body {
+//   height: 100%;
+// }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+p,
+h1,
+h2,
+h3 {
+  color: var(--accent);
+}
+
+:root {
+  --font-family: "Roboto", sans-serif;
+  --primary: #1e272e;
+  --secondary: #485460;
+  --accent: #d2dae2;
+  --lightgray: #ddd;
+  --text-regular: #444;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-regular);
+  background-color: var(--secondary);
+}
+
+// util
+
+.d-flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-justify-content-center {
+  justify-content: center;
+}
+.flex-justify-content-between {
+  justify-content: space-between;
+}
+.flex-align-items-center {
+  align-items: center;
+}
+.flex-align-items-between {
+  align-items: space-between;
+}
+
+.flex-fill {
+  flex: 1 1 auto;
+}
+.p-10 {
+  padding: 10px;
+}
+.p-20 {
+  padding: 20px;
+}
+.m-10 {
+  margin: 10px;
+}
+.m-20 {
+  margin: 20px;
+}
+
+.active {
+  background: var(--secondary);
+  border-radius: 3px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+//debug
+
+.d1 {
+  border: 1px solid red;
+}
+.d2 {
+  border: 1px solid green;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

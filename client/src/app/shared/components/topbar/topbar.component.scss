@@ -1,0 +1,22 @@
+nav {
+  background: var(--primary);
+  color: var(--accent);
+  .logo {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+ul {
+  li {
+    padding: 10px 20px;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 3px;
+    &:hover {
+      background-color: var(--secondary);
+    }
+    transition: background-color 0.4s;
+  }
+}

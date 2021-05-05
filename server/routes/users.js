@@ -2,6 +2,7 @@
 // const RSA_PUBLIC_KEY = fs.readFileSync('./rsa/key.pub');
 // const jwt = require('jsonwebtoken');
 // const User = require('../models/user.model');
+// const router = require('express').Router();
 
 // function isLoggedIn(req, res, next) {
 //     const token = req.headers.authorization;
@@ -22,3 +23,6 @@
 // router.get('/current', isLoggedIn, (req, res) => {
 //     res.json(req.user);
 // });
+
+
+// module.exports = router;

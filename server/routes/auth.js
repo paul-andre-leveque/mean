@@ -18,17 +18,17 @@
 // });
 
 // router.post('/signin', (req, res) => {
-//    User.findOne({ 'email': req.body.email }).exec((err, user) => {
-//       if (user && bcrypt.compareSync(req.body.password, user.password)) {
-//          const token = jwt.sign({}, RSA_KEY_PRIVATE, {
-//             algorithm: 'RS256',
-//             subject: user._id.toString()
-//          });
-//          res.status(200).json(token);
-//       } else {
-//          res.status(401).json('signin fail !');
-//       }
-//    });
+//     User.findOne({ 'email': req.body.email }).exec((err, user) => {
+//         if (user && bcrypt.compareSync(req.body.password, user.password)) {
+//             const token = jwt.sign({}, RSA_KEY_PRIVATE, {
+//                 algorithm: 'RS256',
+//                 subject: user._id.toString()
+//             });
+//             res.status(200).json(token);
+//         } else {
+//             res.status(401).json('signin fail !');
+//         }
+//     });
 // });
 
 // module.exports = router;

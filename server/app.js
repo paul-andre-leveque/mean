@@ -1,15 +1,18 @@
 const express = require("express");
+const path = require("path");
+const logger = require("morgan");
+const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-// const index = require("./routes/index");
 const userRoutes = require('./routes/user');
-const articleRoutes = require('./routes/articleWikiRoute');
-
+const adminRoutes = require('./routes/admin');
 const app = express();
 
-
+app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "../public")));
 
 
 
@@ -36,10 +39,10 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
+app.use('/api/admin', adminRoutes);
+app.use('/api/auth', userRoutes);
 // app.use(index);
-app.use('/api/auth', userRoutes, articleRoutes);
-app.use
+
+
 
 module.exports = app;
