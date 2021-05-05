@@ -7,4 +7,7 @@ const userCtrl = require('../controllers/user');
 router.post('/signup', userCtrl.signup);
 router.post('/signin', userCtrl.signin);
 
+// refresh token avec expiration
+router.get('/refresh-token', userCtrl.refreshToken);
+
 module.exports = router;

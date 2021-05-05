@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
 const fs = require('fs');
+const RSA_PUBLIC_KEY = fs.readFileSync('./rsa/key.pub');
 const RSA_KEY_PRIVATE = fs.readFileSync('./rsa/key');
 
 
@@ -32,6 +33,23 @@ exports.signin = (req, res, next) => {
             res.status(401).json('signin fail !');
         }
     });
+};
+
+exports.refreshToken = (req,res,next) => {
+    const token = req.headers.authorization;
+    if (token) {
+        jwt.verify(token, RSA_PUBLIC_KEY, (err, decoded) => {
+            if (err) {return res.status(403).json('Mauvais token') }
+            const newToken = jwt.sign({}, RSA_KEY_PRIVATE, {
+                algorithm: 'RS256' ,
+                expiresIn: '300s',
+                subject: decoded.sub
+            })
+            res.status(200).json(newToken);
+        })
+    } else {
+        res.json(403).json('Pas de token a rafraichir !');
+    }
 };
 
 

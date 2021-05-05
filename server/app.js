@@ -25,19 +25,14 @@ mongoose.connect(
   },
   function (error) {
     if (error) {
-      console.log(error);
+      console.log("Connexion à MongoDB échouée !");
     } else {
       console.log("Connexion à MongoDB réussie !");
     }
   }
 );
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-  next();
-});
+
 
 app.use('/api/admin', adminRoutes);
 app.use('/api/auth', userRoutes);
