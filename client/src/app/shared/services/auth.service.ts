@@ -28,7 +28,7 @@ export class AuthService {
   }
 
 public initTimer() {
- return timer(2000, 5000).pipe(
+ return timer(300000).pipe(
    switchMap(() => {
      if (localStorage.getItem('jwt')) {
        return this.http.get<string>('/api/auth/refresh-token').pipe(
