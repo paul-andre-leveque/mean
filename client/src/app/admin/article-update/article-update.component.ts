@@ -47,6 +47,8 @@ export class ArticleUpdateComponent implements OnInit {
       imageUrl1: [''],
       imageUrl2: [''],
       imageUrl3: [''],
+      imageUrl4: [''],
+      imageUrl5: [''],
     });
     this.route.params.subscribe(
       (params) => {
@@ -71,6 +73,8 @@ export class ArticleUpdateComponent implements OnInit {
             this.articleWikiForm.get('imageUrl1').setValue(this.articleWiki.imageUrl1);
             this.articleWikiForm.get('imageUrl2').setValue(this.articleWiki.imageUrl2);
             this.articleWikiForm.get('imageUrl3').setValue(this.articleWiki.imageUrl3);
+            this.articleWikiForm.get('imageUrl4').setValue(this.articleWiki.imageUrl4);
+            this.articleWikiForm.get('imageUrl5').setValue(this.articleWiki.imageUrl5);
             this.loading = false;
           }
         );

@@ -8,10 +8,12 @@ import { ArticleComponent } from './admin/article/article.component';
 import { ArticlePostComponent } from './admin/article-post/article-post.component';
 import { ArticleDeleteComponent } from './admin/article-delete/article-delete.component';
 import { ArticleUpdateComponent } from './admin/article-update/article-update.component';
+import { ArticleUserComponent } from './article-user/article-user.component';
 
 
 export const APP_ROUTING: Route[] = [
   { path: '', component: HomepageComponent },
+  { path: 'articleUser/:id', component: ArticleUserComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'articlePost', canActivate: [AuthGuard], component: ArticlePostComponent },

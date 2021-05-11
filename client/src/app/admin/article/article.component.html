@@ -1,18 +1,298 @@
 <mat-spinner *ngIf="loading"></mat-spinner>
 <div *ngIf="!loading">
-  <button class="btn btn-link" (click)="Back()"><< Retour</button>
-  <div class="single-thing-pane">
-    <img [src]="articleWiki?.imageUrl1" alt="" />
-    <div class="single-thing-info">
-      <h1>{{ articleWiki?.title }}</h1>
-      <h2>Résumé</h2>
+  <mat-tab-group>
+    <mat-tab label="Résumé">
+      <div class="container">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title
+              ><h1 class="title-article">
+                {{ articleWiki?.title }}
+              </h1></mat-card-title
+            >
+          </mat-card-header>
+          <div class="img-articles">
+            <img
+              img
+              class="img-article"
+              [src]="articleWiki?.imageUrl1"
+              alt=""
+              mat-card-image
+            />
+          </div>
+          <mat-card-content class="resume-detail">
+            <h2 class="title-article-h2">Résumé</h2>
+            <p class="article-p">
+              {{ articleWiki?.resume }}
+            </p>
+            <div class="detail-detail">
+              <h3 class="detail-h3">Développeur</h3>
+              <p class="detail-p">{{ articleWiki?.dev }}</p>
+              <h3 class="detail-h3">Editeur</h3>
+              <p class="detail-p">{{ articleWiki?.editeur }}</p>
+              <h3 class="detail-h3">Directeur</h3>
+              <p class="detail-p">{{ articleWiki?.directeur }}</p>
+              <h3 class="detail-h3">Compositeur</h3>
+              <p class="detail-p">{{ articleWiki?.compositeur }}</p>
+              <h3 class="detail-h3">Date de sortie</h3>
+              <p class="detail-p">{{ articleWiki?.date }}</p>
+              <h3 class="detail-h3">Genre</h3>
+              <p class="detail-p">{{ articleWiki?.genre }}</p>
+              <h3 class="detail-h3">Console</h3>
+              <p class="detail-p">{{ articleWiki?.plateforme }}</p>
+              <h3 class="detail-h3">Mode de jeu</h3>
+              <p class="detail-p">{{ articleWiki?.mod }}</p>
+              <h3 class="detail-h3">Langue</h3>
+              <p class="detail-p">{{ articleWiki?.langue }}</p>
+            </div>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button
+              (click)="Modify()"
+              [disabled]="part >= 3 && userId !== articleWiki?.userId"
+              mat-stroked-button
+              color="warn"
+            >
+              Modifier
+            </button>
+            <button (click)="Delete()" mat-stroked-button color="primary">
+              Supprimer
+            </button>
+          </mat-card-actions>
+          <!-- <mat-card-footer>Copyright</mat-card-footer> -->
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="Synopsie">
+      <div class="container">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title
+              ><h1 class="title-article">
+                {{ articleWiki?.title }}
+              </h1></mat-card-title
+            >
+          </mat-card-header>
+          <div class="img-articles">
+            <img
+              img
+              class="img-article"
+              [src]="articleWiki?.imageUrl2"
+              alt=""
+              mat-card-image
+            />
+          </div>
+          <mat-card-content class="resume-detail">
+            <h2 class="title-article-h2">Synopsie</h2>
+            <p class="article-p">
+              {{ articleWiki?.synopsie }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button
+              (click)="Modify()"
+              [disabled]="part >= 3 && userId !== articleWiki?.userId"
+              mat-stroked-button
+              color="warn"
+            >
+              Modifier
+            </button>
+            <button (click)="Delete()" mat-stroked-button color="primary">
+              Supprimer
+            </button>
+          </mat-card-actions>
+          <!-- <mat-card-footer>Copyright</mat-card-footer> -->
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="Gameplay">
+      <div class="container">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title
+              ><h1 class="title-article">
+                {{ articleWiki?.title }}
+              </h1></mat-card-title
+            >
+          </mat-card-header>
+          <div class="img-articles">
+            <img
+              img
+              class="img-article"
+              [src]="articleWiki?.imageUrl3"
+              alt=""
+              mat-card-image
+            />
+          </div>
+          <mat-card-content class="resume-detail">
+            <h2 class="title-article-h2">Gameplay</h2>
+            <p class="article-p">
+              {{ articleWiki?.gameplay }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button
+              (click)="Modify()"
+              [disabled]="part >= 3 && userId !== articleWiki?.userId"
+              mat-stroked-button
+              color="warn"
+            >
+              Modifier
+            </button>
+            <button (click)="Delete()" mat-stroked-button color="primary">
+              Supprimer
+            </button>
+          </mat-card-actions>
+          <!-- <mat-card-footer>Copyright</mat-card-footer> -->
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="Développement">
+      <div class="container">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title
+              ><h1 class="title-article">
+                {{ articleWiki?.title }}
+              </h1></mat-card-title
+            >
+          </mat-card-header>
+          <div class="img-articles">
+            <img
+              img
+              class="img-article"
+              [src]="articleWiki?.imageUrl4"
+              alt=""
+              mat-card-image
+            />
+          </div>
+          <mat-card-content class="resume-detail">
+            <h2 class="title-article-h2">Développement</h2>
+            <p class="article-p">
+              {{ articleWiki?.developpement }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button
+              (click)="Modify()"
+              [disabled]="part >= 3 && userId !== articleWiki?.userId"
+              mat-stroked-button
+              color="warn"
+            >
+              Modifier
+            </button>
+            <button (click)="Delete()" mat-stroked-button color="primary">
+              Supprimer
+            </button>
+          </mat-card-actions>
+          <!-- <mat-card-footer>Copyright</mat-card-footer> -->
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="Accueil/critique">
+      <div class="container">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title
+              ><h1 class="title-article">
+                {{ articleWiki?.title }}
+              </h1></mat-card-title
+            >
+          </mat-card-header>
+          <div class="img-articles">
+            <img
+              img
+              class="img-article"
+              [src]="articleWiki?.imageUrl5"
+              alt=""
+              mat-card-image
+            />
+          </div>
+          <mat-card-content class="resume-detail">
+            <h2 class="title-article-h2">Accueil/critique</h2>
+            <p class="article-p">
+              {{ articleWiki?.accueil }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button
+              (click)="Modify()"
+              [disabled]="part >= 3 && userId !== articleWiki?.userId"
+              mat-stroked-button
+              color="warn"
+            >
+              Modifier
+            </button>
+            <button (click)="Delete()" mat-stroked-button color="primary">
+              Supprimer
+            </button>
+          </mat-card-actions>
+          <!-- <mat-card-footer>Copyright</mat-card-footer> -->
+        </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  <!-- <article class="article d1">
+    <h1>{{ articleWiki?.title }}</h1>
+    <div class="detail-g d2">
+      <div class="detail d1">
+        <div class="detail-img d2">
+          <h2>Détails:</h2>
+          <h3>{{ articleWiki?.title }}</h3>
+          <img class="img-article" [src]="articleWiki?.imageUrl1" alt="" />
+        </div>
+        <div class="detail-detail d2">
+          <h4>Développeur:</h4>
+          <p>{{ articleWiki?.dev }}</p>
+          <h4>Editeur:</h4>
+          <p>{{ articleWiki?.editeur }}</p>
+          <h4>Directeur:</h4>
+          <p>{{ articleWiki?.directeur }}</p>
+          <h4>Compositeur:</h4>
+          <p>{{ articleWiki?.compositeur }}</p>
+          <h4>Date de sortie:</h4>
+          <p>{{ articleWiki?.date }}</p>
+          <h4>Genre:</h4>
+          <p>{{ articleWiki?.genre }}</p>
+          <h4>Console:</h4>
+          <p>{{ articleWiki?.plateforme }}</p>
+          <h4>Mode de jeu:</h4>
+          <p>{{ articleWiki?.mod }}</p>
+          <h4>Langue:</h4>
+          <p>{{ articleWiki?.langue }}</p>
+        </div>
+      </div>
+    </div>
+    <nav class="article-nav d1">
+      <ul class="article-nav-ul d2">
+        <li><a href="#section1">Résumé</a></li>
+        <li><a href="#block2">Synopsie</a></li>
+        <li><a href="#section3">Gameplay</a></li>
+        <li><a href="#section4">Développement</a></li>
+        <li><a href="#section5">Accueil/critique</a></li>
+      </ul>
+    </nav>
+    <section id="section1" class="section-g section-resume">
+      <h3>Résumé:</h3>
       <p>{{ articleWiki?.resume }}</p>
-      <h3>Synopsie</h3>
+    </section>
+    <section id="section2" class="section-g section-synopsie">
+      <h3>Synopsie:</h3>
       <p>{{ articleWiki?.synopsie }}</p>
-      <h3>Développement</h3>
+    </section>
+    <section id="section3" class="section-g section-gameplay">
+      <h3>Gameplay:</h3>
+      <p>{{ articleWiki?.gameplay }}</p>
+    </section>
+    <section id="section4" class="section-g section-developpement">
+      <h3>Développement:</h3>
       <p>{{ articleWiki?.developpement }}</p>
-      <h3>Accueil</h3>
+    </section>
+    <section id="section5" class="section-g section-accueil">
+      <h3>Accueil/critique:</h3>
       <p>{{ articleWiki?.accueil }}</p>
+    </section>
+    <div>
       <button
         class="btn btn-success m-1"
         (click)="Modify()"
@@ -22,5 +302,5 @@
       </button>
       <button class="btn btn-danger m-1" (click)="Delete()">Supprimer</button>
     </div>
-  </div>
+  </article> -->
 </div>

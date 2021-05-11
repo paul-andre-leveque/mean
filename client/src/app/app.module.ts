@@ -34,6 +34,7 @@ import { WikiRouteService } from './shared/services/wikiRoute.service';
 import { StateService } from './shared/services/state.service';
 import { StuffService } from './shared/services/stuff.service';
 import { SearchService } from './shared/services/search.service';
+import { MessageService } from './shared/services/message.service';
 
 // guards
 import { AuthGuard } from './shared/guards/auth.guard';
@@ -43,6 +44,7 @@ import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 
 ////// Routing
 import { APP_ROUTING } from './app.routing';
+import { ArticleUserComponent } from './article-user/article-user.component';
 
 
 
@@ -64,6 +66,7 @@ import { APP_ROUTING } from './app.routing';
     ArticlePostComponent,
     ArticleDeleteComponent,
     ArticleUpdateComponent,
+    ArticleUserComponent,
 
   ],
   imports: [
@@ -91,6 +94,7 @@ import { APP_ROUTING } from './app.routing';
     StateService,
     StuffService,
     SearchService,
+    MessageService,
   ],
   bootstrap: [AppComponent],
 })

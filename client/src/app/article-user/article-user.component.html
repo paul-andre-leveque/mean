@@ -1,0 +1,172 @@
+<mat-tab-group>
+  <mat-tab label="Résumé">
+    <div class="container">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title
+            ><h1 class="title-article">
+              {{ articleWiki?.title }}
+            </h1></mat-card-title
+          >
+        </mat-card-header>
+        <div class="img-articles">
+          <img
+            img
+            class="img-article"
+            [src]="articleWiki?.imageUrl1"
+            alt=""
+            mat-card-image
+          />
+        </div>
+        <mat-card-content class="resume-detail">
+          <h2 class="title-article-h2">Résumé</h2>
+          <p class="article-p">
+            {{ articleWiki?.resume }}
+          </p>
+          <div class="detail-detail">
+            <h3 class="detail-h3">Développeur</h3>
+            <p class="detail-p">{{ articleWiki?.dev }}</p>
+            <h3 class="detail-h3">Editeur</h3>
+            <p class="detail-p">{{ articleWiki?.editeur }}</p>
+            <h3 class="detail-h3">Directeur</h3>
+            <p class="detail-p">{{ articleWiki?.directeur }}</p>
+            <h3 class="detail-h3">Compositeur</h3>
+            <p class="detail-p">{{ articleWiki?.compositeur }}</p>
+            <h3 class="detail-h3">Date de sortie</h3>
+            <p class="detail-p">{{ articleWiki?.date }}</p>
+            <h3 class="detail-h3">Genre</h3>
+            <p class="detail-p">{{ articleWiki?.genre }}</p>
+            <h3 class="detail-h3">Console</h3>
+            <p class="detail-p">{{ articleWiki?.plateforme }}</p>
+            <h3 class="detail-h3">Mode de jeu</h3>
+            <p class="detail-p">{{ articleWiki?.mod }}</p>
+            <h3 class="detail-h3">Langue</h3>
+            <p class="detail-p">{{ articleWiki?.langue }}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="end"> </mat-card-actions>
+        <!-- <mat-card-footer>Copyright</mat-card-footer> -->
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Synopsie">
+    <div class="container">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title
+            ><h1 class="title-article">
+              {{ articleWiki?.title }}
+            </h1></mat-card-title
+          >
+        </mat-card-header>
+        <div class="img-articles">
+          <img
+            img
+            class="img-article"
+            [src]="articleWiki?.imageUrl2"
+            alt=""
+            mat-card-image
+          />
+        </div>
+        <mat-card-content class="resume-detail">
+          <h2 class="title-article-h2">Synopsie</h2>
+          <p class="article-p">
+            {{ articleWiki?.synopsie }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions align="end"> </mat-card-actions>
+        <!-- <mat-card-footer>Copyright</mat-card-footer> -->
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Gameplay">
+    <div class="container">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title
+            ><h1 class="title-article">
+              {{ articleWiki?.title }}
+            </h1></mat-card-title
+          >
+        </mat-card-header>
+        <div class="img-articles">
+          <img
+            img
+            class="img-article"
+            [src]="articleWiki?.imageUrl3"
+            alt=""
+            mat-card-image
+          />
+        </div>
+        <mat-card-content class="resume-detail">
+          <h2 class="title-article-h2">Gameplay</h2>
+          <p class="article-p">
+            {{ articleWiki?.gameplay }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions align="end"> </mat-card-actions>
+        <!-- <mat-card-footer>Copyright</mat-card-footer> -->
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Développement">
+    <div class="container">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title
+            ><h1 class="title-article">
+              {{ articleWiki?.title }}
+            </h1></mat-card-title
+          >
+        </mat-card-header>
+        <div class="img-articles">
+          <img
+            img
+            class="img-article"
+            [src]="articleWiki?.imageUrl4"
+            alt=""
+            mat-card-image
+          />
+        </div>
+        <mat-card-content class="resume-detail">
+          <h2 class="title-article-h2">Développement</h2>
+          <p class="article-p">
+            {{ articleWiki?.developpement }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions align="end"> </mat-card-actions>
+        <!-- <mat-card-footer>Copyright</mat-card-footer> -->
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Accueil/critique">
+    <div class="container">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title
+            ><h1 class="title-article">
+              {{ articleWiki?.title }}
+            </h1></mat-card-title
+          >
+        </mat-card-header>
+        <div class="img-articles">
+          <img
+            img
+            class="img-article"
+            [src]="articleWiki?.imageUrl5"
+            alt=""
+            mat-card-image
+          />
+        </div>
+        <mat-card-content class="resume-detail">
+          <h2 class="title-article-h2">Accueil/critique</h2>
+          <p class="article-p">
+            {{ articleWiki?.accueil }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions align="end"> </mat-card-actions>
+        <!-- <mat-card-footer>Copyright</mat-card-footer> -->
+      </mat-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>

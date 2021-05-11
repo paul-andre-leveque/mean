@@ -4,8 +4,12 @@ const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const userRoutes = require('./routes/user');
+
+
+// Routes
+const authRoutes = require('./routes/user');
 const adminRoutes = require('./routes/admin');
+const userRoutes = require('./routes/users')
 const app = express();
 
 app.use(logger("dev"));
@@ -32,11 +36,11 @@ mongoose.connect(
   }
 );
 
-
-
+//Routes
+app.use('/api/articleUser', userRoutes);
 app.use('/api/admin', adminRoutes);
-app.use('/api/auth', userRoutes);
-// app.use(index);
+app.use('/api/auth', authRoutes);
+
 
 
 

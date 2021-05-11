@@ -19,6 +19,8 @@ const articleWikiSchema = mongoose.Schema({
     imageUrl1: { type: String, required: true },
     imageUrl2: { type: String },
     imageUrl3: { type: String },
+    imageUrl4: { type: String },
+    imageUrl5: { type: String },
     userId: { type: String },
 });
 

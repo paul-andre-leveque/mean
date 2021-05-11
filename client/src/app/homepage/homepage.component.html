@@ -1,4 +1,12 @@
-<div class="container">
-  <input type="text" placeholder="Search..." />
-  <div class="search"></div>
+<div id="search-component">
+  <label for="search-box">Hero Search</label>
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let articleWiki of articleWiki$ | async">
+      <a routerLink="/articleUser/{{ articleWiki._id }}">
+        {{ articleWiki.title }}
+      </a>
+    </li>
+  </ul>
 </div>

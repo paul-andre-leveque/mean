@@ -19,9 +19,9 @@
 ul {
   list-style: none;
 }
-img {
-  max-width: 100%;
-}
+// img {
+//   max-width: 100%;
+// }
 a {
   text-decoration: none;
   color: inherit;
@@ -104,5 +104,11 @@ body {
   border: 1px solid green;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

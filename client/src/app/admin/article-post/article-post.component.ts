@@ -41,6 +41,8 @@ export class ArticlePostComponent implements OnInit {
       imageUrl1: [''],
       imageUrl2: [''],
       imageUrl3: [''],
+      imageUrl4: [''],
+      imageUrl5: [''],
     });
   }
   public wikiPost(): void {

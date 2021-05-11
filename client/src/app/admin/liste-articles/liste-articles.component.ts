@@ -14,7 +14,7 @@ import { MatSort } from '@angular/material/sort';
 })
 export class ListeArticlesComponent implements OnInit {
   public dataSource: MatTableDataSource<ArticleWiki> = new MatTableDataSource();
-  public displayedColumns = ["title", "dev", "editeur", "genre",];
+  public displayedColumns = ['title', 'dev', 'editeur', 'genre',];
   @ViewChild(MatPaginator) paginateur: MatPaginator;
   @ViewChild(MatSort) public sort: MatSort;
   public liste: ArticleWiki[];
