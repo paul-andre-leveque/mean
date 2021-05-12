@@ -20,7 +20,7 @@ exports.signup = (req, res, next) => {
         })
         .catch(error => res.status(500).json({ error }));
 };
-
+// clé RSA incorporer pour que le token l'utilise afin de généré le token 
 exports.signin = (req, res, next) => {
     User.findOne({ 'email': req.body.email }).exec((err, user) => {
         if (user && bcrypt.compareSync(req.body.password, user.password)) {

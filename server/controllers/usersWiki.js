@@ -19,14 +19,17 @@ exports.getOnesearchResult = (req, res, next) => {
 
 
 exports.getSearch = (req, res, next) => {
-    ArticleWiki.find().then(
-        (articleWikis) => {
-            res.status(200).json(articleWikis);
+    const title = req.query.title;
+    var search = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
+
+    ArticleWiki.find(search).then(
+        (articleWiki) => {
+            res.status(200).json(articleWiki);
         }
     ).catch(
-        (error) => {
-            res.status(400).json({
-                error: error
+        (err) => {
+            res.status(500).json({
+                message: err.message || "Aucun article trouvé"
             });
         }
     );

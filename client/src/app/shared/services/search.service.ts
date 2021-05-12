@@ -32,15 +32,15 @@ export class SearchService {
       // if not search term, return empty hero array.
       return of([]);
     }
-    return this.http.get<ArticleWiki[]>(`${this.articleUser}/?name=${term}`).pipe(
+    return this.http.get<ArticleWiki[]>(`${this.articleUser}/?title=${term}`).pipe(
       tap(x => x.length ?
-        this.log(`found heroes matching "${term}"`) :
-        this.log(`no heroes matching "${term}"`)),
+        this.log(`Bien joué article trouver "${term}"`) :
+        this.log(`Aucun article troiuvé "${term}"`)),
       catchError(this.handleError<ArticleWiki[]>('searchArticles', []))
     );
   }
   private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
+    this.messageService.add(`SearchService: ${message}`);
   }
 
   // récupération article USER par ID
