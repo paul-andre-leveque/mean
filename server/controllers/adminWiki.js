@@ -82,7 +82,7 @@ exports.modifyArticle = (req, res, next) => {
     ArticleWiki.updateOne({ _id: req.params.id }, articleWiki).then(
         () => {
             res.status(201).json({
-                message: 'Thing updated successfully!'
+                message: 'article update ! '
             });
         }
     ).catch(

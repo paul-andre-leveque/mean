@@ -12,10 +12,10 @@ import { ArticleUserComponent } from './article-user/article-user.component';
 
 
 export const APP_ROUTING: Route[] = [
-  { path: '', component: HomepageComponent },
+  { path: '', component: HomepageComponent, data: { animation: 'HomePage' } },
   { path: 'articleUser/:id', component: ArticleUserComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'signin', component: SigninComponent },
+  { path: 'signin', component: SigninComponent, data: { animation: 'signin' } },
   { path: 'articlePost', canActivate: [AuthGuard], component: ArticlePostComponent },
   { path: 'listeArticles', canActivate: [AuthGuard], component: ListeArticlesComponent },
   { path: 'article/:id', canActivate: [AuthGuard], component: ArticleComponent },

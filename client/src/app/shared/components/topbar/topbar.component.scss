@@ -1,22 +1,26 @@
-nav {
-  background: var(--primary);
-  color: var(--accent);
-  .logo {
-    font-size: 20px;
-    font-weight: 700;
-  }
+.space {
+  flex: 1 1 auto;
 }
 
-ul {
-  li {
-    padding: 10px 20px;
-    display: inline-block;
-    font-weight: 700;
-    font-size: 20px;
-    border-radius: 3px;
-    &:hover {
-      background-color: var(--secondary);
-    }
-    transition: background-color 0.4s;
-  }
+mat-toolbar {
+  background: var(--primary);
+}
+
+.svg {
+  width: 70%;
+  height: auto;
+  margin: top 50px;
+}
+
+.mat-icon-button {
+  color: rgba(255, 255, 255, 1);
+}
+
+.mat-menu-item {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.span-menu {
+  color: var(--primary);
+  font-family: var(--font-family);
 }

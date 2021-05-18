@@ -1,8 +1,13 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/bootswatch/dist/united/bootstrap.min.css";
 
 .link {
   outline: 0;
   cursor: pointer;
+}
+button:focus {
+  outline: 0;
 }
 
 // html,
@@ -40,12 +45,14 @@ h3 {
   --accent: #d2dae2;
   --lightgray: #ddd;
   --text-regular: #444;
+  --red: #cc0a39;
 }
 
 body {
   font-family: var(--font-family);
   color: var(--text-regular);
-  background-color: var(--secondary);
+  background-color: var(--accent);
+  // background-image: url("./assets/fond1.svg");
 }
 
 // util
@@ -106,9 +113,6 @@ body {
 
 html,
 body {
+  -webkit-tap-highlight-color: transparent;
   height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

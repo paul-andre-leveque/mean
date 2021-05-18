@@ -1,12 +1,33 @@
-<div id="search-component">
+<div id="search-component" class="search-container">
   <label for="search-box">WikiRetroGame recherche</label>
   <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-
-  <ul class="search-result">
-    <li *ngFor="let articleWiki of articleWiki$ | async">
-      <a routerLink="/articleUser/{{ articleWiki._id }}">
-        {{ articleWiki.title }}
-      </a>
-    </li>
-  </ul>
+</div>
+<div class="container-result">
+  <div
+    class="flip flip-vertical"
+    *ngFor="let articleWiki of articleWiki$ | async"
+  >
+    <div class="front">
+      <div class="box-img">
+        <img
+          class="img-responsive"
+          src="{{ articleWiki.imageUrl1 }}"
+          alt="article"
+        />
+      </div>
+    </div>
+    <div class="back">
+      <h2>{{ articleWiki.title }}</h2>
+      <h3>Développeur: {{ articleWiki.dev }}</h3>
+      <div class="container-btn">
+        <button
+          routerLink="/articleUser/{{ articleWiki._id }}"
+          class="btn"
+          mat-raised-button
+        >
+          Plus de Détails
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

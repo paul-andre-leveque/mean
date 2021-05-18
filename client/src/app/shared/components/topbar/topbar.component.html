@@ -24,20 +24,26 @@
   </span>
 </mat-toolbar> -->
 
-<nav
-  class="header d-flex flex-row flex-justify-content-between p-10 flex-align-items-center"
+<!-- <nav
+  class="
+    header
+    d-flex
+    flex-row flex-justify-content-between
+    p-10
+    flex-align-items-center
+  "
 >
   <ul>
     <li class="link" class="logo p-20" routerLink="/">WikiRetroGame</li>
   </ul>
   <ul *ngIf="!jwtToken.isAuthenticated">
     <li class="link" routerLink="/signin">Connexion</li>
-    <li class="link" routerLink="/signup">Inscription</li>
     <li class="link" routerLink="/contact" routerLinkActive="active">
       Contact
     </li>
   </ul>
   <ul *ngIf="jwtToken.isAuthenticated">
+    <li class="link" routerLink="/signup">Inscription</li>
     <li class="link" routerLink="/listeArticles">Liste des articles</li>
     <li class="link" routerLink="/articlePost">Ajouter</li>
     <li class="link" routerLink="/contact" routerLinkActive="active">
@@ -47,4 +53,59 @@
       >power_settings_new</mat-icon
     >
   </ul>
-</nav>
+</nav> -->
+<mat-toolbar>
+  <div>
+    <img
+      routerLink="/"
+      class="svg"
+      src="../../../../assets/logo.svg"
+      alt="WikiRetroGame"
+    />
+  </div>
+  <!-- <h1 class="h1-toolbar" routerLink="/">WikiRetroGame</h1> -->
+  <span class="space"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+    <mat-icon class="icon">more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <span *ngIf="!jwtToken.isAuthenticated">
+      <button mat-menu-item routerLink="/">
+        <mat-icon>home</mat-icon>
+        <span class="span-menu">Accueil</span>
+      </button>
+      <button mat-menu-item routerLink="/signin">
+        <mat-icon>manage_accounts</mat-icon>
+        <span class="span-menu">Connexion</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>email</mat-icon>
+        <span class="span-menu">Contact</span>
+      </button>
+    </span>
+    <span *ngIf="jwtToken.isAuthenticated">
+      <button mat-menu-item routerLink="/signup">
+        <mat-icon>person_add</mat-icon>
+        <span class="span-menu">Inscription Admin</span>
+      </button>
+      <button mat-menu-item routerLink="/articlePost">
+        <mat-icon>post_add</mat-icon>
+        <span class="span-menu">Ajouter Wiki</span>
+      </button>
+      <button mat-menu-item routerLink="/listeArticles">
+        <mat-icon>format_list_numbered</mat-icon>
+        <span class="span-menu">Liste des Wikis</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>admin_panel_settings</mat-icon>
+        <span class="span-menu">Gestion Admin</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon class="link" routerLink="/" (click)="logout()"
+          >power_settings_new</mat-icon
+        >
+        <span class="span-menu">Déconnexion</span>
+      </button>
+    </span>
+  </mat-menu>
+</mat-toolbar>
