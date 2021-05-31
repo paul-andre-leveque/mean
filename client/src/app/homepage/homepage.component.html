@@ -1,6 +1,12 @@
 <div id="search-component" class="search-container">
   <label for="search-box">WikiRetroGame recherche</label>
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  <input
+    #searchBox
+    id="search-box"
+    (input)="search(searchBox.value)"
+    ngModel
+    pattern="[a-zA-Z ]*"
+  />
 </div>
 <div class="container-result">
   <div

@@ -13,12 +13,12 @@ import { ArticleUserComponent } from './article-user/article-user.component';
 
 export const APP_ROUTING: Route[] = [
   { path: '', component: HomepageComponent, data: { animation: 'HomePage' } },
-  { path: 'articleUser/:id', component: ArticleUserComponent },
-  { path: 'signup', component: SignupComponent },
+  { path: 'articleUser/:id', component: ArticleUserComponent, data: { animation: 'articleUser' } },
+  { path: 'signup', canActivate: [AuthGuard], component: SignupComponent, data: { animation: 'signup' } },
   { path: 'signin', component: SigninComponent, data: { animation: 'signin' } },
-  { path: 'articlePost', canActivate: [AuthGuard], component: ArticlePostComponent },
-  { path: 'listeArticles', canActivate: [AuthGuard], component: ListeArticlesComponent },
-  { path: 'article/:id', canActivate: [AuthGuard], component: ArticleComponent },
-  { path: 'articleDelete/:id', canActivate: [AuthGuard], component: ArticleDeleteComponent },
-  { path: 'articleUpdate/:id', canActivate: [AuthGuard], component: ArticleUpdateComponent },
+  { path: 'articlePost', canActivate: [AuthGuard], component: ArticlePostComponent, data: { animation: 'articlePost' } },
+  { path: 'listeArticles', canActivate: [AuthGuard], component: ListeArticlesComponent, data: { animation: 'listeArticles' } },
+  { path: 'article/:id', canActivate: [AuthGuard], component: ArticleComponent, data: { animation: 'article' } },
+  { path: 'articleDelete/:id', canActivate: [AuthGuard], component: ArticleDeleteComponent, data: { animation: 'articleDelete' } },
+  { path: 'articleUpdate/:id', canActivate: [AuthGuard], component: ArticleUpdateComponent, data: { animation: 'articleUpdate' } },
 ];

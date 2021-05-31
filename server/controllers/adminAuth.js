@@ -30,18 +30,18 @@ exports.signin = (req, res, next) => {
             });
             res.status(200).json(token);
         } else {
-            res.status(401).json('signin fail !');
+            res.status(401).json('Mauvaise authentification !');
         }
     });
 };
 
-exports.refreshToken = (req,res,next) => {
+exports.refreshToken = (req, res, next) => {
     const token = req.headers.authorization;
     if (token) {
         jwt.verify(token, RSA_PUBLIC_KEY, (err, decoded) => {
-            if (err) {return res.status(403).json('Mauvais token') }
+            if (err) { return res.status(403).json('Mauvais token') }
             const newToken = jwt.sign({}, RSA_KEY_PRIVATE, {
-                algorithm: 'RS256' ,
+                algorithm: 'RS256',
                 expiresIn: '300s',
                 subject: decoded.sub
             })

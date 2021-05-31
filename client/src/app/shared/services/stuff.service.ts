@@ -17,7 +17,7 @@ export class StuffService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  // tslint:disable-next-line: no-shadowed-variable
+
   private handleError<ArticleWiki>(operation = 'operation', result?: ArticleWiki) {
     return (error: any): Observable<ArticleWiki> => {
       console.error(error);

@@ -77,6 +77,8 @@ exports.modifyArticle = (req, res, next) => {
         imageUrl1: req.body.imageUrl1,
         imageUrl2: req.body.imageUrl2,
         imageUrl3: req.body.imageUrl3,
+        imageUrl4: req.body.imageUrl4,
+        imageUrl5: req.body.imageUrl5,
         userId: req.body.userId
     });
     ArticleWiki.updateOne({ _id: req.params.id }, articleWiki).then(

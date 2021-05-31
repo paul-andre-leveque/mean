@@ -103,6 +103,8 @@ export class ArticleUpdateComponent implements OnInit {
     articleWiki.imageUrl1 = this.articleWikiForm.get('imageUrl1').value;
     articleWiki.imageUrl2 = this.articleWikiForm.get('imageUrl2').value;
     articleWiki.imageUrl3 = this.articleWikiForm.get('imageUrl3').value;
+    articleWiki.imageUrl4 = this.articleWikiForm.get('imageUrl4').value;
+    articleWiki.imageUrl5 = this.articleWikiForm.get('imageUrl5').value;
     articleWiki._id = new Date().getTime().toString();
     articleWiki.userId = this.articleWiki.userId;
     this.stuffService.modifyArticle(this.articleWiki._id, articleWiki).then(

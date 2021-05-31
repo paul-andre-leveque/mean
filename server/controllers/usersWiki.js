@@ -34,3 +34,20 @@ exports.getSearch = (req, res, next) => {
         }
     );
 };
+
+exports.getSearcha = (req, res, next) => {
+    const dev = req.query.dev;
+    var search = dev ? { dev: { $regex: new RegExp(dev), $options: "i" } } : {};
+
+    ArticleWiki.find(search).then(
+        (articleWiki) => {
+            res.status(200).json(articleWiki);
+        }
+    ).catch(
+        (err) => {
+            res.status(500).json({
+                message: err.message || "Aucun article trouvé"
+            });
+        }
+    );
+};

@@ -29,7 +29,7 @@ export class SearchService {
   // récupération des article par title sur searchBar
   searchArticles(term: string): Observable<ArticleWiki[]> {
     if (!term.trim()) {
-      // if not search term, return empty hero array.
+
       return of([]);
     }
     return this.http.get<ArticleWiki[]>(`${this.articleUser}/?title=${term}`).pipe(
@@ -57,11 +57,4 @@ export class SearchService {
     });
   }
 
-  // getArticleUserId(id: number): Observable<ArticleWiki> {
-  //   const url = `${this.articleUser}/${id}`;
-  //   return this.http.get<ArticleWiki>(url).pipe(
-  //     tap(_ => this.log(`fetched hero id=${id}`)),
-  //     catchError(this.handleError<ArticleWiki>(`getArticleUserId id=${id}`))
-  //   );
-  // }
 }

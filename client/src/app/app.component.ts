@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
 import { AuthService } from './shared/services/auth.service';
 import { RouterOutlet } from '@angular/router';
-import { slideInAnimation } from './animations';
+import { fader } from './animations';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   animations: [
-    slideInAnimation
-
-  ]
+    fader
+  ],
 })
 export class AppComponent {
   constructor(private authService: AuthService) { }
