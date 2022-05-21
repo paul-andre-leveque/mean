@@ -1,20 +1,3 @@
-<!--<mat-spinner *ngIf="loading"></mat-spinner>
-<p class="text-center" *ngIf="liste.length <= 0 && !loading">Aucun articles</p>
-<div class="stuff-grid" *ngIf="liste.length >= 0">
-  <div
-    class="thing-pane"
-    *ngFor="let articleWiki of liste"
-    [ngClass]="{ open: articleWiki._id === chosenId }"
-    [ngStyle]="{ 'background-image': 'url(' + articleWiki.imageUrl1 + ')' }"
-    (click)="articleClicked(articleWiki._id)"
-  >
-    <div class="thing-info">
-      <h3>
-        {{ articleWiki.title }}
-      </h3>
-    </div>
-  </div>
-</div>-->
 <div class="container">
   <h2>Liste des articles</h2>
   <div class="search-bar-cont">

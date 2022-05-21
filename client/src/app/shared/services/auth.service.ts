@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, timer, of,  Subscription  } from 'rxjs';
+import { BehaviorSubject, timer, of, Subscription } from 'rxjs';
 import { Observable } from 'rxjs';
 import { User } from '../models/user.model';
 import { JwtToken } from '../models/JwtToken.model';
@@ -20,40 +20,40 @@ export class AuthService {
   });
 
   constructor(
-    private http: HttpClient, 
+    private http: HttpClient,
     private router: Router,
-    ) {
+  ) {
     this.initToken();
     this.subscription = this.initTimer();
   }
 
-public initTimer() {
- return timer(300000).pipe(
-   switchMap(() => {
-     if (localStorage.getItem('jwt')) {
-       return this.http.get<string>('/api/auth/refresh-token').pipe(
-         tap((token: string) => {
-           this.jwtToken.next({
-             isAuthenticated: true,
-             token: token
-           });
-           localStorage.setItem('jwt', token);
-         })
-       );
-     } else {
-       this.subscription.unsubscribe();
-       return of(null);
-     }
-   })
- ).subscribe(() => {}, err => {
-   this.jwtToken.next({
-     isAuthenticated: false,
-     token: null
-   });
-   localStorage.removeItem('jwt');
-   this.subscription.unsubscribe();
- });
-}
+  public initTimer() {
+    return timer(300000).pipe(
+      switchMap(() => {
+        if (localStorage.getItem('jwt')) {
+          return this.http.get<string>('/api/auth/refresh-token').pipe(
+            tap((token: string) => {
+              this.jwtToken.next({
+                isAuthenticated: true,
+                token: token
+              });
+              localStorage.setItem('jwt', token);
+            })
+          );
+        } else {
+          this.subscription.unsubscribe();
+          return of(null);
+        }
+      })
+    ).subscribe(() => { }, err => {
+      this.jwtToken.next({
+        isAuthenticated: false,
+        token: null
+      });
+      localStorage.removeItem('jwt');
+      this.subscription.unsubscribe();
+    });
+  }
 
   private initToken(): void {
     const token = localStorage.getItem('jwt');
