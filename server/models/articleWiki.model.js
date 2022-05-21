@@ -22,7 +22,6 @@ const articleWikiSchema = mongoose.Schema({
     imageUrl4: { type: String },
     imageUrl5: { type: String },
     userId: { type: String },
-    userId: { type: String },
 });
 
 module.exports = mongoose.model('ArticleWiki', articleWikiSchema);
