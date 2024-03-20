@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 // .catch(err => console.log(err));
 
 mongoose.connect(
-    "mongodb+srv://paul-dev:AeN2oXjKtv0XmvKi@cluster-node.mb2yl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "mongodb+srv://paul-dev:dvhdAfHYG3XegvKh@cluster-node.mb2yl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     {
         keepAlive: true,
         useUnifiedTopology: true,
